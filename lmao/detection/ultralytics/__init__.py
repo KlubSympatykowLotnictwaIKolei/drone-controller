@@ -1,0 +1,2 @@
+
+from .yolov8_ultralytics_detector import YoloV8UltralyticsDetector

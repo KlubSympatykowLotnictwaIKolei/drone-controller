@@ -1,0 +1,42 @@
+
+#  __    _____ _____ _____ 
+# |  |  |     |  _  |     |
+# |  |__| | | |     |  |  |
+# |_____|_|_|_|__|__|_____|
+# 
+# This file holds configuration for the lmao marker detector
+# Notes:
+#  - Units of measurement must be expressed explicitly (for example angle must be "<ANGLE> rad" or "<ANGLE> deg")
+#
+# Note: This particular LMAO config holds configuration where nothing is real (All 
+#       implementations are mocks). Use this to check how the system works or to 
+#       see whether the core implementation is even able to run on your machine.
+
+detector:
+  type: static
+
+gimbal:
+  position:
+    forward: 0 m
+    right:   0 m
+    up:      0 m
+  rotation:
+    roll:   0 deg
+    pitch: 45 deg
+    yaw:    0 deg
+
+camera:
+  type: static
+  physical_parameters:
+    sensor_width:  6.71 mm
+    sensor_height: 5.61 mm
+    focal_length:  6.05 mm
+
+live_view:
+  type: none
+
+communication:
+  telemetry:
+    type: static
+  mission:
+    type: none
