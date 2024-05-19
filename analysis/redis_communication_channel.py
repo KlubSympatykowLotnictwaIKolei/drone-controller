@@ -5,7 +5,9 @@ import redis
 
 @dataclass
 class DetectionPositionOutgoingMessage:
-    position: PositionGPS
+    lat: float
+    lon: float
+    class_id: int 
 
 class RedisCommunicationChannel:
 
@@ -22,3 +24,5 @@ class RedisCommunicationChannel:
         
         return self.dummy_mavlink_connection.mav.parse_char(redis_message['data'])
     
+    def send(self, pos: PositionGPS, class_id: int):
+        pass

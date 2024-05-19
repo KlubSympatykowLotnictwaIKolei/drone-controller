@@ -1,3 +1,4 @@
+from typing import Tuple
 import rasterio
 import numpy as np
 import cv2 as cv
@@ -22,7 +23,7 @@ class poorMansGps:
         ].copy()
         self.cropped_map = cv.cvtColor(self.cropped_map, cv.COLOR_BGR2GRAY)
 
-    def get_gps_from_photo(self, photo: np.ndarray) -> tuple[float, float]:
+    def get_gps_from_photo(self, photo: np.ndarray) -> Tuple[float, float]:
 
         result = self.match(photo)
         if result is None:
@@ -36,13 +37,13 @@ class poorMansGps:
         return self.pixel_to_gps(cropped_x, cropped_y)
 
 
-    def pixel_to_gps(self, x: int, y: int) -> tuple[float, float]:
+    def pixel_to_gps(self, x: int, y: int) -> Tuple[float, float]:
         xs, ys = rasterio.transform.xy(self.tif_map.transform, [y], [x]) #tu ma być y x
         lons = np.array(xs)
         lats = np.array(ys)
         return lats[0], lons[0]
 
-    def match(self, img_to_match: np.ndarray) -> tuple[int, int]:
+    def match(self, img_to_match: np.ndarray) -> Tuple[int, int]:
         """
         prams:
             map - b&w\n
