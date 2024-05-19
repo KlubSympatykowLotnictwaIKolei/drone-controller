@@ -1,2 +1,0 @@
-
-from .yolov8_tensorrt_detector import YoloV8TensorrtDetector

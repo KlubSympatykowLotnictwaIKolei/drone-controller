@@ -1,5 +1,0 @@
-
-LMAO_SYSTEM_ID = 1 # PA system id
-LMAO_COMPONENT_ID = 69 # LMAO component id
-
-LMAO_DETECTOR_CLASS_ID_CIRCLE = 1
